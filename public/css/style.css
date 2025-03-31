@@ -1,0 +1,183 @@
+
+.home-top-menu {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+h1[id="welcome"] {
+    font-size: 70px;
+    text-align: center;
+}
+
+h3[id="home-h3"] {
+    text-align: center;
+}
+
+.home-banners {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.home-banners img{
+    width:1000px;
+    height:400px;
+}
+
+.ps-banner-container {
+    background-color: blue;
+    padding: 10px;
+    align-items: center;
+
+}
+
+.xbox-banner-container {
+    background-color: green;
+    padding: 10px;
+    align-items: center;
+}
+
+.nintendo-banner-container {
+    background-color: red;
+    padding: 10px;
+    align-items: center;
+}
+
+.steam-banner-container {
+    background-color: black;
+    padding: 10px;
+    align-items: center;
+}
+
+.select-home {
+    display: flex;
+    justify-content: space-between;
+}
+
+a[id="back-to-home"] {
+    text-decoration: none;
+}
+
+a[id="back-to-home"]:hover {
+    color:black;
+}
+
+a[id="home-click-here-browse"] {
+    text-decoration: none;
+}
+
+a[id="home-click-here-browse"]:hover {
+    color:black;
+}
+
+a[id="home-search"] {
+    text-decoration: none;
+}
+
+a[id="home-search"]:hover {
+    color: black;
+}
+
+a[id="home-click-here-signup"] {
+    text-decoration: none;
+}
+
+a[id="home-click-here-signup"]:hover {
+    color:black;
+}
+
+.console-photos {
+    display: flex;
+    flex-direction: column;
+}
+
+.console-photos a {
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+}
+
+.console-photos img {
+    width: 200px;
+    height: 200px;
+}
+
+.ps-logo {
+    text-align: center;
+}
+
+.ps-logo a:hover {
+    color: blue;
+}
+
+.xbox-logo {
+    text-align: center;
+}
+
+.xbox-logo a:hover {
+    color: green;
+}
+
+.nintendo-logo {
+    text-align: center;
+}
+
+.nintendo-logo a:hover {
+    color: red;
+}
+
+.steam-logo {
+    text-align: center;
+}
+
+.steam-logo a:hover {
+    color: black;
+}
+
+h1[id="browse-playstation"] {
+    text-align: center;
+    background-color: black;
+    color:white;
+}
+
+.ps-systems {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+img[id="ps5-logo"]{
+    width: 200px;
+    height: 250px;
+}
+
+img[id="ps4-logo"]{
+    width: 200px;
+    height: 50px;
+}
+
+.game-sections h2{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 100px;
+}
+
+.ps-bestsellers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.ps-bestsellers img {
+    width: 200px;
+    height: 200px;
+}
+
+.ps-bestsellers img:hover {
+    cursor: pointer;
+}

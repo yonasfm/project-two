@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Browse By Item</title>
+</head>
+<body>
+    <div class="select-home">
+        <h1>Search by Games/Titles:</h1> 
+        <a href="/" id="back-to-home">Back to Home Page</a>
+    </div>
+    <form action="/search" method="POST">
+        <label>Game/Title:</label>
+        <input type="text" name="gameName" placeholder="Enter Game/Title" id="search-game">
+        <label>System/Console:</label>
+        <input type="text" name="gameSystem" placeholder="Enter console name" id="search-console">
+        <button type="submit">Search</button>
+    </form>
+
+    <% if (results.length > 0) { %>
+        <ul>
+          <% results.forEach(game => { %>
+            <li> <%= game.gameName %> : <%= game.gameSystem %> </li>
+            <% }) %>
+        </ul>
+           <% } else { %>
+              <p> No results found. </p>
+           <% } %>
+</body>
+</html>
