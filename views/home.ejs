@@ -4,14 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js"></script>
     <title>Home Page</title>
 </head>
 <body>
     <div class = "home-top-menu">
-        <a href="/video-games" id="home-click-here-browse">Search by Console</a>
+        <a href="/consoles" id="home-click-here-browse">Search by Console</a>
         <a href="/search-games" id="home-search">Search by Title</a>
-        <a href="/signup-login" id="home-click-here-signup">Click Here to Sign Up or Login In</a>
+        <a href="/login" id="home-click-here-signup">Login In</a>
     </div>
+
+    <div id="modal-container">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <div id="loginForm">
+            <h2>Login:</h2>
+            <form>
+                <label>Username:</label>
+                <input type="text" placeholder="Enter your username" required>
+                <label>Email address:</label>
+                <input type="text" placeholder="Enter your email" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="/signup/new" id="switchToSignup">Sign up</a></p>
+        </div>
+    </div>
+    </div>
+
     <h1 id="welcome">Welcome to Lamestop!</h1>
     <h3 id="home-h3">Home of the most original app to purchase the latest video games!</h3>
     <div class="home-banners">

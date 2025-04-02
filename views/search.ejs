@@ -13,16 +13,26 @@
     </div>
     <form action="/search" method="POST">
         <label>Game/Title:</label>
-        <input type="text" name="gameName" placeholder="Enter Game/Title" id="search-game">
+        <input type="text" name="gameName" placeholder="Enter Game/Title" id="search-game" required>
         <label>System/Console:</label>
-        <input type="text" name="gameSystem" placeholder="Enter console name" id="search-console">
+        <select name="gameSystem" id="gameSystem">
+            <option value="PS5">PS5</option>
+            <option value="Xbox Series X">Xbox Series X</option>
+            <option value="Nintendo Switch">Nintendo Switch</option>
+            <option value="Steam">Steam</option>
+        </select>
         <button type="submit">Search</button>
     </form>
 
     <% if (results.length > 0) { %>
         <ul>
           <% results.forEach(game => { %>
-            <li> <%= game.gameName %> : <%= game.gameSystem %> </li>
+            <li><%= game.gameName %> - <%= game.gameSystem %>
+                <a href="/search/<%= game._id %>/edit">(Edit Game/Console Choice)</a>
+                <form action="/search/<%= game._id %>?_method=DELETE" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
             <% }) %>
         </ul>
            <% } else { %>

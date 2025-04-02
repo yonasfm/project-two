@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js"></script>
+    <title>Signup Form</title>
+</head>
+<body>
+    <div class="select-home">
+        <h1>Sign Up:</h1>
+        <a href="/" id="back-to-home">Back to Home Page</a>
+    </div>
+            <form action="/signup/newuser" method="POST">
+            <label>Username:</label>
+            <input type="text" name="userName" placeholder="Enter your username" required>
+            <label>Email address:</label>
+            <input type="email" name="userEmail" placeholder="Enter your email" required>
+            <button type="submit">Sign Up</button>
+        </form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Game and/or Console</title>
+</head>
+<body>
+    <h1>Edit Game Choice</h1>
+    <form action="/search/<%= game._id %>?_method=PUT" method="POST">
+        <label>Game Title:</label>
+        <input type="text" name="gameName" value="<%=game.gameName%>" required/>
+        <label>Console:</label>
+        <input type="text" name="gameSystem" value="<%=game.gameSystem%>" required/>
+        <button>Update Game Choice</button>
+    </form>
+    <a href="/search-games">Back to Game Choices</a>
+</body>
+</html>
