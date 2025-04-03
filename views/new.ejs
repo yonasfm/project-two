@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Game</title>
+</head>
+<body>
+    <h1>Add a New Game</h1>
+    <form action="/newgamedatabase" method="POST">
+        <label for="gameName">Game Title:</label>
+        <input name="gameName" type="text" required/>
+
+        <label for="gameSystem">Console/System:</label>
+        <select name="gameSystem" required>
+            <option value="PS5">PS5</option>
+            <option value="Xbox Series X">Xbox Series X</option>
+            <option value="Nintendo Switch">Nintendo Switch</option>
+            <option value="Steam">Steam</option>
+        </select>
+
+        <button type="submit">Add Game</button>
+    </form>
+    <a href="/search-games">Back to Game List</a>
+</body>
+</html>

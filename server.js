@@ -34,10 +34,24 @@ app.get('/consoles', (req, res) => {
 // Search by Game/Title Page
 app.get('/search-games', (req, res) => {
     res.render('search.ejs', {
-        results : ""
+        results : []
     }
     )
 })
+
+// Adds New Game to Database
+app.get("/newgamedatabase", (req, res) => {
+    res.render('new.ejs')
+})
+
+// Posts Game into Database
+app.post('/newgamedatabase', async (req, res) => {
+    const newGame = req.body
+    await videoGame.create(newGame)
+    console.log(newGame)
+    res.redirect('/search-games')
+})
+
 
 // Searches Game and Console and renders results
 app.post('/search', async (req, res) => {
@@ -45,31 +59,30 @@ app.post('/search', async (req, res) => {
     const consoleSelect = req.body.gameSystem
     console.log(titleSelect, consoleSelect)
 
-    // Stores title and console selection
+    // Stores title and console selection in selection object
     const selection = {}
 
-    // Adds chosen title to selection query
+    // Adds chosen title to selection query object
     if (titleSelect) {
         selection.gameName = titleSelect
     }
 
-    // Adds chosen console to selection query
+    // Adds chosen console to selection query object
     if (consoleSelect) {
         selection.gameSystem = consoleSelect
     }
-    
+
     console.log(selection)
-    // Query the database for games and consoles that matches selection
-    const allGames = await videoGame.find({gameName : selection.gameName, gameSystem: selection.gameSystem })
+    // Query the videoGame database for games and consoles that matches selection
+    const allGames = await videoGame.find(selection)
     console.log(allGames)
 
     // Renders search results page with the chosen game and console
     res.render('search.ejs', {
-        results: allGames,
-        searchResults: {gameName: titleSelect, gameSystem : consoleSelect}   
+        results: allGames, // Displays database results
+        searchResults: {gameName: titleSelect, gameSystem : consoleSelect}  // Displays user's stored input
      })
 })
-
 
 
 // Delete Game from Selection
@@ -97,7 +110,6 @@ app.put('/search/:gameId', async (req, res) => {
 app.get('/signup/new', (req, res) => {
     res.render('signup.ejs')
 })
-
 
 // Playstation Home Page
 app.get('/consoles/playstation', (req, res) => {

@@ -14,6 +14,35 @@ h3[id="home-h3"] {
     text-align: center;
 }
 
+#modal-container {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#modal-container.show {
+    display: block;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    cursor: pointer;
+}
+
 .home-banners {
     display: flex;
     flex-wrap: wrap;
@@ -180,4 +209,19 @@ img[id="ps4-logo"]{
 
 .ps-bestsellers img:hover {
     cursor: pointer;
+}
+
+
+.browse-back {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.game-sections {
+    flex-grow: 1
+}
+
+.back-pages {
+    margin-top: auto;
 }
